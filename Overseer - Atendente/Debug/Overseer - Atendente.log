@@ -1,0 +1,18 @@
+﻿Build started 13/07/2016 13:57:38.
+     1>Project "C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\Overseer - Atendente\Overseer - Atendente.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\/API/SFML/include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\diana\documents\visual studio 2013\projects\projectoverseer\overseer - civil\tcpentity.h(82): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\diana\documents\visual studio 2013\projects\projectoverseer\overseer - gui\button.h(45): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\diana\documents\visual studio 2013\projects\projectoverseer\overseer - gui\textbox.h(48): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\diana\documents\visual studio 2013\projects\projectoverseer\overseer - gui\textbox.h(70): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\diana\documents\visual studio 2013\projects\projectoverseer\overseer - gui\textbox.h(144): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\Debug\Overseer - Atendente.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\/API/SFML/lib" "sfml-graphics-d.lib" "sfml-audio-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\Debug\Overseer - Atendente.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\Debug\Overseer - Atendente.lib" /MACHINE:X86 Debug\main.obj
+         Overseer - Atendente.vcxproj -> C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\Debug\Overseer - Atendente.exe
+     1>Done Building Project "C:\Users\Diana\documents\visual studio 2013\Projects\ProjectOverseer\Overseer - Atendente\Overseer - Atendente.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:16.53
