@@ -10,7 +10,7 @@ int main()
 	FreeConsole();
 
 	// Objeto de TCPEntity e de Civil
-	TCPEntity client;
+	TCPEntity client("Policial");
 	sf::Clock timer;
 
 	// Inicialização da Janela
@@ -39,10 +39,8 @@ int main()
 			actualDisplay.textBoxWriting(&e);
 		}
 
+		// Try to connect
 		client.connect();
-
-		client.sendData("PolicialClient");
-		client.receiveData();
 
 		if (client.bufferToString() == "PolicialACK")
 		{

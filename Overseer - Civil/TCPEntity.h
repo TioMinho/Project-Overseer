@@ -10,10 +10,11 @@ class TCPEntity
 protected:
 	// ----- Atributos -----
 	sf::IpAddress ip;
-	std::string machineName;
 	sf::TcpSocket socket;
+	std::string machineName;
 	char buffer[200];
 	std::size_t received;
+	bool connected;
 
 public:
 	// ----- Métodos -----
@@ -23,6 +24,8 @@ public:
 		socket.setBlocking(true);
 
 		strcpy_s(buffer, "NULL");
+
+		connected = false;
 	}
 
 	// Construtor Personalizado
@@ -33,23 +36,39 @@ public:
 		this->machineName = machineName;
 
 		strcpy_s(buffer, "NULL");
+
+		connected = false;
 	}
 
 	// Estabelece a conexão com o Mainframe
 	bool connect() 
 	{
-		if (socket.connect(ip, 2000, sf::milliseconds(500)) != sf::Socket::Disconnected)
-		{
-			return true;
+		if (!connected){
+			if (socket.connect(ip, 2000, sf::milliseconds(500)) != sf::Socket::Disconnected)
+			{
+				sendData(machineName + "Client");
+				receiveData();
+
+				connected = (bufferToString() == (machineName + "ACK"));
+				return connected;
+			}
 		}
 
-		return false;
+		return connected;
 	}
 
 	// Desconecta do Mainframe
 	void disconnect()
 	{
 		socket.disconnect();
+
+		connected = false;
+	}
+
+	// Verifica o estado da conexão
+	bool isConnected()
+	{
+		return connected;
 	}
 
 	// Modifica o Estado de Blocking

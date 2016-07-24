@@ -12,7 +12,7 @@ int main()
 	FreeConsole();
 
 	// Objeto de TCPEntity e de Civil (e de um Timer)
-	TCPEntity client;
+	TCPEntity client("Civil");
 	Civil thisCivil;
 
 	// Inicialização da Janela
@@ -97,7 +97,6 @@ int main()
 	// Estados iniciais:
 	bool connected = false;
 	actualDisplay = &display[0];
-	
 
 	// Program Loop
 	while (janela.isOpen())
@@ -111,10 +110,8 @@ int main()
 			actualDisplay->textBoxWriting(&e);
 		}
 
-		if (!connected) {
-			client.connect();
-			client.sendData("CivilClient");
-		}
+		// Try to connect
+		client.connect();
 
 		// Funcionalidades do Display de Login --------------------------------------------------------------------
 		if (actualDisplay == &display[0])
@@ -302,7 +299,6 @@ int main()
 
 						while (1) 
 						{
-							std::cout << "Teste 1" << std::endl;
 							client.connect();
 							client.sendData("CivilClient");
 							client.receiveData();
@@ -315,12 +311,8 @@ int main()
 
 						client.receiveData();
 
-						std::cout << "Teste 8" << std::endl;
-
 						if (client.bufferToString() == "ERRORRequestRejected")
 						{
-							std::cout << "Teste 2" << std::endl;
-
 							actualDisplay->setText(0, "     !!! Pedido Negado !!!");
 							actualDisplay->setText(2, "");
 							actualDisplay->setText(4, "");
@@ -328,8 +320,6 @@ int main()
 						}
 						else if (client.bufferToString() == "CivilInformACK")
 						{ 
-							std::cout << "Teste 3" << std::endl;
-
 							for (int i = 0; i < 3; i++)
 							{
 								client.sendData("civilRequestDataInform");

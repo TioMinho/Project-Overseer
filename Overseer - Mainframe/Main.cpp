@@ -190,7 +190,7 @@ int main()
 						server.sendData("policialPrepareData");
 					}
 
-					info[2] = "1h30m";
+					info[2] = "2h00m";
 
 					while (!server.acceptConnection("Civil"));
 					server.sendData("CivilInformACK");

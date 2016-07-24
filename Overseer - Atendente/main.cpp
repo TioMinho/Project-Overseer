@@ -10,7 +10,7 @@ int main()
 	FreeConsole();
 
 	// Objeto de TCPEntity e de Civil
-	TCPEntity client;
+	TCPEntity client("Atendente");
 	sf::Clock timer;
 
 	// Inicialização da Janela
@@ -44,10 +44,8 @@ int main()
 			actualDisplay.textBoxWriting(&e);
 		}
 
+		// Try to connect
 		client.connect();
-			
-		client.sendData("AtendenteClient");
-		client.receiveData();
 			
 		if (client.bufferToString() == "AtendenteACK")
 		{
